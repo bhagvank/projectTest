@@ -3,7 +3,7 @@
 <suite name="ToolsQA Buils Setup">
   <test name="ToolsQA Buils Setup">
       <classes>
-      <class name="com.demo.qa.test.BuildJobTest"/>
+      <class name="org.devops.selenium.test.SeleniumTest"/>
       </classes>
   </test>
 </suite>
