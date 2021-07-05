@@ -20,8 +20,8 @@ public class SeleniumTest {
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); //Implicit wait
-		driver.get("https://demoqa.com/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
+		//driver.get("https://demoqa.com/");
 	}
 	
 	@Test
@@ -30,7 +30,7 @@ public class SeleniumTest {
 		driver.get("https://www.lambdatest.com/");
 		
 		
-		WebElement logInLink = driver.findElement(By.xpath("//a[contains(text(),'Log in')]"));
+		WebElement logInLink = driver.findElement(By.xpath("//a[contains(text(),'login')]"));
 		logInLink.click();
 		
 		
@@ -54,10 +54,10 @@ public class SeleniumTest {
 		System.out.println(driver.getTitle());
 		System.out.println(driver.getCurrentUrl());
 					
-		//Assertion and verification of expected URL and actual URL
+		
 		Assert.assertEquals(actualURL, expectedURL);
 		
-		//Assertion and verification of expected Page Title and actual Page Title
+		
 		Assert.assertEquals(actualPageTitle, expectedPageTitle);
 	}
 	
