@@ -19,11 +19,44 @@ public class SeleniumTest {
 	{
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver=new ChromeDriver();
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
 		//driver.get("https://demoqa.com/");
 	}
 	
+	@Test
+	public void flask()
+	{
+	   driver.maximize_window()  
+  
+           driver.delete_all_cookies()  
+ 
+           driver.get("http://localhost:5000")
+
+           driver.find_element_by_xpath("//a[contains(text(),'Add Customer')][1]").click()  
+           time.sleep(4) 
+
+
+           driver.find_element_by_xpath("//input[@type='text'][@name='name'][1]").send_keys("Jack Hill")
+  
+           time.sleep(2) 
+           driver.find_element_by_xpath("//input[@type='email'][@name='email'][1]").send_keys("jack@gmail.com")
+  
+           time.sleep(2) 
+
+           driver.find_element_by_xpath("//input[@type='text'][@name='address'][1]").send_keys("345 Hill Drive, Sanjose 30489")
+  
+           time.sleep(2) 
+
+           driver.find_element_by_xpath("//input[@type='submit'][@value='Submit'][1]").click()
+  
+           time.sleep(2) 
+
+ 
+            driver.close()	
+	}
+	
+	/*
 	@Test
 	public void login()
 	{
@@ -60,7 +93,7 @@ public class SeleniumTest {
 		
 		Assert.assertEquals(actualPageTitle, expectedPageTitle);
 	}
-	
+	*/
 	/*@Test
 	public void ToolsQaTest()
 	{
