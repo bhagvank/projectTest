@@ -19,9 +19,9 @@ public class SeleniumTest {
 	{
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		driver=new ChromeDriver();
-		//driver.manage().window().maximize();
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); 
-		//driver.get("https://demoqa.com/");
+		
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ public class SeleniumTest {
 	{
 	   driver.manage().window().maximize(); 
   
-           //driver.delete_all_cookies()  
+            
  
            driver.get("http://localhost:5000");
 
