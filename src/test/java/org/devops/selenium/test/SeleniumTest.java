@@ -33,27 +33,27 @@ public class SeleniumTest {
  
            driver.get("http://localhost:5000");
 
-           WebElement addCustLink = driver.find_element_by_xpath("//a[contains(text(),'Add Customer')][1]");
+           WebElement addCustLink = driver.findElement(By.xpath("//a[contains(text(),'Add Customer')][1]"));
            addCustLink.click()  ;
            driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS); 
 
 
-           WebElement nameField = driver.find_element_by_xpath("//input[@type='text'][@name='name'][1]");
-		nameField.send_keys("Jack Hill");
+           WebElement nameField = driver.findElement(By.xpath("//input[@type='text'][@name='name'][1]"));
+		nameField.sendKeys("Jack Hill");
           
             driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
 		
-           WebElement emailField = driver.find_element_by_xpath("//input[@type='email'][@name='email'][1]");
-		emailField.send_keys("jack@gmail.com");
+           WebElement emailField = driver.findElement(By.xpath("//input[@type='email'][@name='email'][1]"));
+		emailField.sendKeys("jack@gmail.com");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
 			
 
-           WebElement addressField = driver.find_element_by_xpath("//input[@type='text'][@name='address'][1]");
-		addressField.send_keys("345 Hill Drive, Sanjose 30489");
+           WebElement addressField = driver.findElement(By.xpath("//input[@type='text'][@name='address'][1]"));
+		addressField.sendKeys("345 Hill Drive, Sanjose 30489");
   
            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);  
 
-           WebElement submitLink = driver.find_element_by_xpath("//input[@type='submit'][@value='Submit'][1]");
+           WebElement submitLink = .findElement(By.xpath("//input[@type='submit'][@value='Submit'][1]"));
 		submitLink.click();
   
            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
