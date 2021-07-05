@@ -53,7 +53,7 @@ public class SeleniumTest {
   
            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);  
 
-           WebElement submitLink = .findElement(By.xpath("//input[@type='submit'][@value='Submit'][1]"));
+           WebElement submitLink = driver.findElement(By.xpath("//input[@type='submit'][@value='Submit'][1]"));
 		submitLink.click();
   
            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
