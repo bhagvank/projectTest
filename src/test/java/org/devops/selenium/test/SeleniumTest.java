@@ -27,33 +27,39 @@ public class SeleniumTest {
 	@Test
 	public void flask()
 	{
-	   driver.maximize_window()  
+	   driver.manage().window().maximize(); 
   
-           driver.delete_all_cookies()  
+           //driver.delete_all_cookies()  
  
-           driver.get("http://localhost:5000")
+           driver.get("http://localhost:5000");
 
-           driver.find_element_by_xpath("//a[contains(text(),'Add Customer')][1]").click()  
-           time.sleep(4) 
+           WebElement addCustLink = driver.find_element_by_xpath("//a[contains(text(),'Add Customer')][1]");
+           addCustLink.click()  ;
+           driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS); 
 
 
-           driver.find_element_by_xpath("//input[@type='text'][@name='name'][1]").send_keys("Jack Hill")
+           WebElement nameField = driver.find_element_by_xpath("//input[@type='text'][@name='name'][1]");
+		nameField.send_keys("Jack Hill");
+          
+            driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
+		
+           WebElement emailField = driver.find_element_by_xpath("//input[@type='email'][@name='email'][1]");
+		emailField.send_keys("jack@gmail.com");
+		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
+			
+
+           WebElement addressField = driver.find_element_by_xpath("//input[@type='text'][@name='address'][1]");
+		addressField.send_keys("345 Hill Drive, Sanjose 30489");
   
-           time.sleep(2) 
-           driver.find_element_by_xpath("//input[@type='email'][@name='email'][1]").send_keys("jack@gmail.com")
-  
-           time.sleep(2) 
+           driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);  
 
-           driver.find_element_by_xpath("//input[@type='text'][@name='address'][1]").send_keys("345 Hill Drive, Sanjose 30489")
+           WebElement submitLink = driver.find_element_by_xpath("//input[@type='submit'][@value='Submit'][1]");
+		submitLink.click();
   
-           time.sleep(2) 
-
-           driver.find_element_by_xpath("//input[@type='submit'][@value='Submit'][1]").click()
-  
-           time.sleep(2) 
+           driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS); 
 
  
-            driver.close()	
+            //driver.close()	
 	}
 	
 	/*
